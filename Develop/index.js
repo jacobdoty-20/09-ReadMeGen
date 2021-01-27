@@ -4,25 +4,46 @@ const fs = require('fs');
 
 // TODO: Create an array of questions for user input
 // const questions = [];
-const inquirer = require('inquirer');
-const fs = require('fs');
 inquirer
   .prompt([
     {
       type: 'input',
-      message: 'What is your user name?',
-      name: 'username',
+      message: 'What is your project name?',
+      name: 'projectName',
     },
     {
-      type: 'password',
-      message: 'What is your password?',
-      name: 'password',
+      type: 'input',
+      message: 'Describe your project.',
+      name: 'describe',
     },
     {
-      type: 'password',
-      message: 'Re-enter password to confirm:',
-      name: 'confirm',
+      type: 'input',
+      message: 'What did you install?',
+      name: 'installed',
     },
+    {
+        type: 'input',
+        default: 'Bootcamp',
+        message: 'License',
+        name: 'license',
+    },
+    {
+        type: 'input',
+        default: 'Anonymous',
+        message: 'Contributors',
+        name: 'contributors',
+    },
+    {
+        type: 'input',
+        message: 'What tests did you run?',
+        name: 'tests',
+    },
+    {
+        type: 'input',
+        default: 'None',
+        message: 'Thoughts and/or questions',
+        name: 'questions',
+    }
   ])
   .then(response => 
     // console.log(response)
