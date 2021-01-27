@@ -36,6 +36,7 @@ inquirer
     {
         type: 'input',
         message: 'What tests did you run?',
+        default: 'None',
         name: 'tests',
     },
     {
@@ -51,18 +52,32 @@ inquirer
     //   ? console.log('Success!')
     //   : console.log('You forgot your password already?!')
     {
-      let html = `<!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Document</title>
-      </head>
-      <body>
-          ${response.username}
-      </body>
-      </html>`;
-      fs.writeFile("index.html", html, (err) => {
+      let readMd = `${response.projectName}
+      Description:
+        ${response.describe}
+      
+      Table of Contents:
+        Installation
+        Usage
+        Credits
+        License
+
+      Installation:
+        ${response.installed}
+      
+      License:
+        ${response.license}     
+
+      Contributing:
+         ${response.contributors}
+
+      Tests:
+         ${response.tests}
+      
+      Notes:
+        ${response.questions}`;
+
+      fs.writeFile(`${response.projectName}` +".md", readMd, (err) => {
         if(err){
           console.log(err);
         }
