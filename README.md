@@ -14,6 +14,7 @@ Using the command line, create a file with input from prompts.
 
 ```md
 ![alt text](screenshot.png)
+![alt text](https://drive.google.com/file/d/1tbw3ipt2aHAyW-5lJIAouZ_C8lf0L1L6/view)
 ```
 
 ## Credits
