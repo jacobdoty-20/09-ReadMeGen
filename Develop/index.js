@@ -1,9 +1,6 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// TODO: Create an array of questions for user input
-// const questions = [];
 inquirer
   .prompt([
     {
@@ -47,34 +44,30 @@ inquirer
     }
   ])
   .then(response => 
-    // console.log(response)
-    // response.confirm === response.password
-    //   ? console.log('Success!')
-    //   : console.log('You forgot your password already?!')
     {
-      let readMd = `${response.projectName}
-      Description:
+      let readMd = `# ${response.projectName}
+      ## Description:
         ${response.describe}
       
-      Table of Contents:
+        ## Table of Contents:
         Installation
         Usage
         Credits
         License
 
-      Installation:
+        ## Installation:
         ${response.installed}
       
-      License:
+        ## License:
         ${response.license}     
 
-      Contributing:
+        ##  Contributing:
          ${response.contributors}
 
-      Tests:
+        ## Tests:
          ${response.tests}
       
-      Notes:
+        ## Notes:
         ${response.questions}`;
 
       fs.writeFile(`${response.projectName}` +".md", readMd, (err) => {
@@ -88,12 +81,7 @@ inquirer
     }
   );
 
-
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
 function init() {}
 
-// Function call to initialize app
+
 init();
